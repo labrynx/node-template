@@ -17,13 +17,22 @@
     "src/**/*.{js,jsx,ts,tsx}": "eslint --ignore-path .eslintignore --cache --fix",
     "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --ignore-path .gitignore --write --ignore-unknown"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/jest": "^29.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.0",
