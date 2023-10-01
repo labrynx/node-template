@@ -17,6 +17,13 @@
     "src/**/*.{js,jsx,ts,tsx}": "eslint --ignore-path .eslintignore --cache --fix",
     "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --ignore-path .gitignore --write --ignore-unknown"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npx commitlint --edit $1",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "npx lint-staged"
+    }
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
