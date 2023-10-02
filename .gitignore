@@ -1,6 +1,20 @@
+# Dependencies
+node_modules/
 package-lock.json
-node_modules
-dist
+
+# Build Artifacts
+dist/
+
+# NPM Configuration
 .npmrc
-.husky
+
+# Husky Configuration
+.husky/
+
+# ESLint Cache
 .eslintcache
+
+# Jest and Testing
+coverage/
+test-results/
+.jest-cache/
