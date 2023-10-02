@@ -14,9 +14,9 @@
     "lint:fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "format:check": "npx prettier --ignore-path .gitignore --check .",
-    "test": "jest --config=jest.config.ts",
-    "test:coverage": "jest --config=jest.config.ts --coverage",
-    "test:watch": "jest --config=jest.config.ts --watch"
+    "test": "jest --config=./tests/jest.config.ts",
+    "test:coverage": "jest --config=./tests/jest.config.ts --coverage",
+    "test:watch": "jest --config=./tests/jest.config.ts --watch"
   },
   "config": {
     "commitizen": {

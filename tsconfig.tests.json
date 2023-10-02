@@ -1,14 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./"
+    "rootDir": "./tests"
   },
   "exclude": [
     "./dist",
     "./node_modules"
   ],
   "include": [
-    "./jest.config.ts",
-    "./src/**/*.{test,spec}.ts",
+    "./tests/jest.config.ts",
+    "./tests/**/*.{test,spec}.ts",
   ]
 }

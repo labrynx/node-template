@@ -5,17 +5,20 @@ const config = {
     testEnvironment: 'node',
     globals: {
         'ts-jest': {
-            tsconfig: 'tsconfig.tests.json',
+            tsconfig: '../tsconfig.tests.json',
         },
     },
     roots: ['<rootDir>/tests'],
     transform: {
         '^.+\\.tsx?$': 'ts-jest',
     },
-    testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.tsx?$',
+    testRegex: '(<rootDir>/tests/.*|(\\.|/)(test|spec))\\.tsx?$',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     coverageDirectory: 'coverage',
-    collectCoverageFrom: ['tests/**/*.{test,spec}.{ts,tsx}', '!tests/**/*.d.ts'],
+    collectCoverageFrom: [
+        '<rootDir>/tests/**/*.{test,spec}.{ts,tsx}',
+        '!<rootDir>/tests/**/*.d.ts',
+    ],
     coverageReporters: ['json', 'lcov', 'text', 'clover'],
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/tests/$1',

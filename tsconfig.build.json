@@ -5,9 +5,9 @@
         "rootDir": "./src"
     },
     "exclude": [
-        "tests",
-        "node_modules",
-        "jest.config.ts"
+        "./tests",
+        "./node_modules",
+        "./jest.config.ts"
     ],
     "include": [
         "./src/**/*.{ts,tsx}"
