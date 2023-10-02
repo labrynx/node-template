@@ -8,5 +8,8 @@
         "tests",
         "node_modules",
         "jest.config.ts"
+    ],
+    "include": [
+        "./src/**/*.{ts,tsx}"
     ]
 }
