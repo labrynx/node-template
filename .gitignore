@@ -1,19 +1,38 @@
+# -------------------------------
+# Meta Files
+# -------------------------------
+# IDE Configuration
+.vscode/
+
+# -------------------------------
 # Dependencies
+# -------------------------------
 node_modules/
 package-lock.json
 
+# -------------------------------
 # Build Artifacts
+# -------------------------------
 dist/
 
+# -------------------------------
+# Configuration Files
+# -------------------------------
 # NPM Configuration
 .npmrc
 
 # Husky Configuration
 .husky/
 
+# -------------------------------
+# Linters and Formatters
+# -------------------------------
 # ESLint Cache
 .eslintcache
 
+# -------------------------------
+# Testing
+# -------------------------------
 # Jest and Testing
 coverage/
 test-results/
