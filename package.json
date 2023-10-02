@@ -1,10 +1,10 @@
 {
-  "name": "template",
-  "version": "0.0.0",
+  "name": "@labryns/node-template",
+  "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
+  "main": ".dist/index.js",
+  "author": "alessbarb",
+  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "build": "tsc --p tsconfig.build.json",
@@ -34,7 +34,17 @@
     "src/**/*.{js,jsx,ts,tsx}": "eslint --ignore-path .eslintignore --cache --fix",
     "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --ignore-path .gitignore --write --ignore-unknown"
   },
-  "keywords": [],
+  "keywords": [
+    "template",
+    "node",
+    "typescript",
+    "husky",
+    "jest",
+    "semantic-release",
+    "commitizen",
+    "eslint",
+    "prettier"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
