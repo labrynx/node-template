@@ -6,10 +6,9 @@
     },
     "exclude": [
         "./tests",
-        "./node_modules",
-        "./jest.config.ts"
+        "./node_modules"
     ],
     "include": [
-        "./src/**/*.{ts,tsx}"
+        "./src"
     ]
 }
