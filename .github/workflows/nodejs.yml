@@ -105,10 +105,19 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
+      - name: Check if Repo is a Template
+        id: check-template
+        run: |
+          echo "IS_TEMPLATE=$(curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -s 'https://api.github.com/repos/${{ github.repository }}' | jq '.is_template')"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false'
         uses: actions/checkout@v4
 
       - name: Create Release Draft
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false'
         id: create_release
         uses: actions/create-release@v1
         with:
@@ -128,17 +137,26 @@ jobs:
       contents: write
 
     steps:
+      - name: Check if Repo is a Template
+        id: check-template
+        run: |
+          echo "IS_TEMPLATE=$(curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' -s 'https://api.github.com/repos/${{ github.repository }}' | jq '.is_template')"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false'
         uses: actions/checkout@v4
 
       - name: Check package version
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false'
         id: check-version
         uses: PostHog/check-package-version@v2
 
       - name: Install dependencies
-        if: steps.check-version.outputs.is-new-version == 'true'
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false' && steps.check-version.outputs.is-new-version == 'true'
         run: npm ci
 
       - name: Publish to NPM
-        if: steps.check-version.outputs.is-new-version == 'true'
+        if: steps.check-template.outputs.IS_TEMPLATE == 'false' && steps.check-version.outputs.is-new-version == 'true'
         run: npm publish
